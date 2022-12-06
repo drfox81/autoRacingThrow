@@ -1,15 +1,15 @@
 public class Car extends Transport implements Competing {
 
     private BodyTypeCar bodyType;
-    public final TypeTransport type = TypeTransport.CAR;
+    private boolean diagnostic;
 
-    public TypeTransport getType() {
-        return type;
+    public boolean isDiagnostic() {
+        return diagnostic;
     }
 
     @Override
     public String printType() {
-        return "тип транспортного средства " + getBrand() + " " + getModel() + " - " + getType().name();
+        return "тип транспортного средства " + getBrand() + " " + getModel();
     }
 
     public Car(String brand, String model, String fuel, double engineCapacity) {
@@ -47,7 +47,16 @@ public class Car extends Transport implements Competing {
     }
 
     @Override
-    public String toString() {
-        return  getBodyType().name() + ": " + getBodyType().getType();
+    public boolean passDiagnostics(Dr driver) throws СhangeDriversLicense {
+        if (driver.getDriverLicense() != Dr.DL_B){
+            throw new СhangeDriversLicense();
+        }
+            return this.diagnostic = true;
     }
+
+    @Override
+    public String toString() {
+        return getBodyType().name() + ": " + getBodyType().getType();
+    }
+
 }

@@ -41,8 +41,15 @@ public class Bus extends Transport implements Competing {
     }
 
     @Override
+    public boolean passDiagnostics(Dr driver) throws СhangeDriversLicense {
+        return false;
+    }
+
+    @Override
     public String toString() {
         return getBrand() + " " + getModel() + " вместимость: " + capacityBus.getCapacityDown() +
                 " - " + capacityBus.getCapacityUp() + " мест";
     }
+
+
 }

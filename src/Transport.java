@@ -2,6 +2,12 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public abstract class Transport implements GeneralMethods {
+    private boolean diagnostic;
+
+    public boolean isDiagnostic() {
+        return diagnostic;
+    }
+
     private String brand;
     private String model;
     private double engineCapacity;

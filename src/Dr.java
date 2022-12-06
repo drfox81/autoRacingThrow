@@ -11,7 +11,11 @@ public abstract class Dr <T extends Transport> implements GeneralMethods {
     private int experience;
     private T car;
 
-    public Dr(String nameDriver, int experience, T car,String driverLicense) {
+    public T getCar() {
+        return car;
+    }
+
+    public Dr(String nameDriver, int experience, T car, String driverLicense) {
         setNameDriver(nameDriver);
         setDriverLicense(driverLicense);
         setExperience(experience);
