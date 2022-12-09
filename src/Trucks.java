@@ -1,6 +1,11 @@
 public class Trucks extends Transport implements Competing {
     private BodyTypeTruck loadCapacity;
     public final TypeTransport type = TypeTransport.TRUCK;
+    private boolean diagnostic;
+
+    public boolean isDiagnostic() {
+        return diagnostic;
+    }
 
     public TypeTransport getType() {
         return type;
@@ -41,6 +46,14 @@ public class Trucks extends Transport implements Competing {
     @Override
     public void maxSpeed() {
         System.out.println("достиг максимальной скорости 150 км/ч");
+    }
+
+    @Override
+    public boolean passDiagnostics(Dr driver) throws СhangeDriversLicense {
+        if (driver.getDriverLicense() != Dr.DL_C){
+            throw new СhangeDriversLicense();
+        }
+        return this.diagnostic = true;
     }
 
     @Override

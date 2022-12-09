@@ -1,6 +1,5 @@
 public enum BodyTypeCar {
 
-
     SEDAN("седан"), HATCHBACK("хэтчбэк"), COUPE("купе"), STATION("универсал"), OFFROAD("внедорожник"),
     CROSSOVER("кроссовер"), PICKUP("пикап"), VAN("фургон"), MINIVAN("минивэн"), DEFOULT("не указан");
     private final String type;
